@@ -205,7 +205,6 @@ header input:focus {
     color:#fff;
     text-align:center;
     text-shadow:-1px -1px rgba(0, 0, 0, 0.4);
-    transform-style:preserve-3d;
     backface-visibility:hidden;
     transition:all 1s ease-in-out;
  }
@@ -223,7 +222,7 @@ header input:focus {
     transform:rotateY(180deg);
  }
  
- .zodiacs_card_flip.is-fliiped > .back {
+ .zodiacs_card_flip.is-flipped > .back {
     background: transparent;
     transform:rotateY(0);
  }

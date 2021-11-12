@@ -94,3 +94,7 @@ const card = document.querySelector('.zodiacs_card_flip')
 card.addEventListener('mouseover', function (e) {
 	card.classList.toggle('is-flipped')
 })
+
+card.addEventListener('mouseout', function (e){
+	card.classList.toggle('is-flipped')
+})
