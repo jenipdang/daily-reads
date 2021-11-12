@@ -69,3 +69,161 @@ header input:focus {
     background-color: rgba(255, 255, 255, 0.6);
 }
 
+.zodiac-container {
+    flex: 1 1 100%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.current_date {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.description {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 900;
+    margin: 30px 0px;
+    text-shadow: 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.color {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 15px;
+    text-shadow: 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.lucky_number, .compatibility{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    text-shadow: 2px 6px rgba(0, 0, 0, 0.5);
+}
+.alert {
+    background-color: tomato;
+}
+
+.footer_container {
+    background-color: #131313;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.social_icon-link {
+    color: #fff;
+    font-size: 24px;
+}
+
+.social_media {
+    max-width: 1000px;
+    width: 100%;
+}
+
+.social_media-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto 0 auto;
+}
+
+.social_icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 240px;
+}
+
+.website_rights {
+    color: #fff;
+    padding-bottom: 5px;
+}
+.zodiacs {
+    background-image: url('../images/geminibkg.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 60px 0;
+}
+
+.zodiacs h4 {
+    background-size: 100%;
+    font-size: 20px;
+}
+
+.zodiacs_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.zodiacs_card_flip {
+    margin: 5px;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform;
+}
+
+
+.zodiacs_card_flip p {
+    text-align: left;
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+ 
+ .zodiacs_card_flip >.front,
+ .zodiacs_card_flip >.back {
+    display:block;
+    box-sizing:content-box;
+    position:absolute;
+    padding-top:16px;
+    color:#fff;
+    text-align:center;
+    text-shadow:-1px -1px rgba(0, 0, 0, 0.4);
+    transform-style:preserve-3d;
+    backface-visibility:hidden;
+    transition:all 1s ease-in-out;
+ }
+ 
+ .zodiacs_card_flip > .front {
+    transform:rotateY(0deg) rotateX(0deg);
+ }
+ 
+ .zodiacs_card_flip > .back {
+    transform:rotateY(-180deg);
+    font-size: medium;
+ }
+ 
+ .zodiacs_card_flip.is-flipped > .front {
+    transform:rotateY(180deg);
+ }
+ 
+ .zodiacs_card_flip.is-fliiped > .back {
+    background: transparent;
+    transform:rotateY(0);
+ }
+
+
