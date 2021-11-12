@@ -18,6 +18,7 @@
     overflow: hidden;
 }
 
+
 .content{
     color: #fbfcfd;
     position: absolute;
@@ -190,8 +191,6 @@ header input:focus {
     transform-style: preserve-3d;
     transition: transform 2s ease-out;
 }
-
-
 
 .zodiacs__card p {
     text-align: center;
