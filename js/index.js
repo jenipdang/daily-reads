@@ -81,7 +81,7 @@ async function getQuotes() {
     .then(response => {
 	    console.log(response);
 
-	    document.getElementById('description').innerHTML = response.content
+	    document.getElementById('description').innerHTML = '"' + response.content + '"'
 	    document.getElementById('color').innerHTML = ' - ' + response.originator.name + ' - '
     })
     .catch(handleErrorDisplay)
