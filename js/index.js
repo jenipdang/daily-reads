@@ -89,12 +89,12 @@ async function getQuotes() {
 
 document.addEventListener("DOMContentLoaded", getQuotes)
 
-const card = document.querySelector('.zodiacs_card_flip')
+const card = document.querySelectorAll('.zodiacs_card_flip')
 
-card.addEventListener('mouseover', function (e) {
+cards.forEach(card.addEventListener('mouseover', () => {
 	card.classList.toggle('is-flipped')
-})
+}))
 
-card.addEventListener('mouseout', function (e){
+cards.forEach(card.addEventListener('mouseout', () => {
 	card.classList.toggle('is-flipped')
-})
+}))
