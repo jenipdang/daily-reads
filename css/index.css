@@ -160,9 +160,7 @@ header input:focus {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     height: 100%;
-    padding: 60px 0;
 }
 
 .zodiacs h4 {
@@ -190,7 +188,7 @@ header input:focus {
     color: #fff;
     cursor: pointer;
     transform-style: preserve-3d;
-    transition: transform 3s ease-out;
+    transition: transform 2s ease-out;
 }
 
 
@@ -218,7 +216,7 @@ header input:focus {
     text-align:center;
     text-shadow:-1px -1px rgba(0, 0, 0, 0.4);
     backface-visibility:hidden;
-    transition:all 1s ease-in-out;
+    transition:all 2s ease-in-out;
  }
  
  .front {
