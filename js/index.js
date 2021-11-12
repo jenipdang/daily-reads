@@ -91,8 +91,6 @@ document.addEventListener("DOMContentLoaded", getQuotes)
 
 const cards = document.querySelectorAll('.zodiacs_card_flip')
 
-let isCardFlipped = false
-
 function flipCard(){
 	this.classList.toggle('is-flipped')
 }
