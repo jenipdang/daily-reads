@@ -9,6 +9,44 @@
     <title>Daily Reads</title>
 </head>
 <body>
+    <div class="hide" id="message-banner"></div>
+    
+    <div class="navbar" id="navbar">
+        <div class="navbar_container" id="navbar_container">
+            <div class="navbar_toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar_menu" id="navbar_menu">
+                <li class="navbar_item">
+                 <a href="#home" class="navbar_links" id="home-page">Home</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="#zodiacs" class="navbar_links" id="zodiac-page">Zodiac Signs</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="hero">
+        <div class="content" id="content">
+            <small>Welcome to</small>
+            <h1>Daily Reads</h1>
+            <p>Horoscope - Zodiac Signs - Random Quotes</p>
+            <header>
+                <input type="text" autocomplete="off" class="search-box" id="search-box"
+                placeholder="Enter a zodiac sign..." />
+                <section class="zodiac-container">
+                    <div class="current__date" id="current-date"></div>
+                    <div class="compatibility" id="compatibility"></div>
+                    <div class="description" id="description"></div>
+                    <div class="color" id="color"></div>
+                    <div class="lucky_number" id="lucky-number"></div>
+                </section>
+            </header> 
+        </div>
+    </div>
+    
     <script src="js/index.js" type="module"></script>
 </body>
 </html>
