@@ -5,6 +5,16 @@ searchBox().addEventListener('keypress', searchQuery)
 
 const messageBanner = () => document.querySelector("#message-banner")
 
+const handleErrorDisplay = (error) => {
+	messageBanner().classList.add("alert")
+	messageBanner().textContent = error
+	messageBanner().classList.remove("hide")
+	setTimeout(() => {
+		messageBanner().classList.remove("alert")
+		messageBanner().classList.add("hide")
+	}, 5000)
+}
+
 function searchQuery(event) {
 	if(event.keyCode === 13) {
 		getResults(searchBox().value)
@@ -38,3 +48,24 @@ const displayResults = (horoscope) => {
 }
 
 document.addEventListener("DOMContentLoaded", searchQuery)
+
+const menu = document.querySelector('#mobile-menu')
+const mobileLinks = document.querySelector('.navbar_menu')
+
+const mobileMenu = () => {
+	menu.classList.toggle('is-active');
+	mobileLinks.classList.toggle('active')
+}
+
+menu.addEventListener('click', mobileMenu)
+
+const hideMobileMenu = () => {
+    const mobileMenuBars = document.querySelector('.is-active')
+    if(window.innerWidth <= 760 && mobileMenuBars) {
+        menu.classList.toggle('is-active')
+        mobileLinks.classList.remove('active')
+    }
+}
+
+mobileLinks.addEventListener('click', hideMobileMenu);
+
