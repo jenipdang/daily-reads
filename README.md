@@ -5,9 +5,9 @@
 This Daily Reads is a JS application that leverages DOM manipulation to interact with the user. I built this project because I love reading horoscopes and random quotes. I feel that through horoscope or random qoute is a beautiful tool for individuals to use to give guidance when it comes time to make a decision and give comfort during stressful times. ["http://example.com"](Check out my blog about the project, there I get more into details about some of its features!)
 
 ## Features
- automtically load and display random quote for user to read
- allow user to search for daily horoscope by sign
- user can also general zodiac signs information 
+ - automtically load and display random quote for user to read
+ - allow user to search for daily horoscope by sign
+ - user can also general zodiac signs information 
 
 ## Installation
 
