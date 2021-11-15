@@ -25,7 +25,6 @@ function getQuotes() {
     })
     .then (response => response.json())
     .then(response => {
-	    // console.log(response);
 	    document.getElementById('description').innerHTML = '"' + response.content + '"'
 	    document.getElementById('color').innerHTML = ' - ' + response.originator.name + ' - '
     })
@@ -37,7 +36,6 @@ document.addEventListener("DOMContentLoaded", getQuotes)
 function searchQuery(event) {
 	if(event.keyCode === 13) {
 		getResults(searchBox().value)
-		// console.log(searchBox().value)
 	}
 }
 
@@ -52,23 +50,6 @@ async function getResults(sign) {
 	const horoscope = await response.json()
 	return displayResults(horoscope)
 }
-
-// const getResults = (sign) => {
-// 	fetch(`https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=${sign}&day=today`, {
-// 		"method": "POST",
-// 		"headers": {
-// 			"x-rapidapi-host": "sameer-kumar-aztro-v1.p.rapidapi.com",
-// 			"x-rapidapi-key": MY_API_KEY
-// 		}
-// 	})
-// 	.then(response => response.json())
-// 	.then(horoscope => displayResults(horoscope))
-// 	.then(horoscope => {
-// 		console.log(horoscope)
-// 	})
-
-// 	.catch(handleErrorDisplay)
-// }
 
 const displayResults = (horoscope) => {
 	document.getElementById('description').innerText = '\"' + horoscope.description + '\"'
