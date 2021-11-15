@@ -189,7 +189,7 @@ header input:focus {
     color: #fff;
     cursor: pointer;
     transform-style: preserve-3d;
-    transition: transform 2s ease-out;
+    transition: transform 1s ease-out;
 }
 
 .zodiacs__card p {
@@ -201,7 +201,7 @@ header input:focus {
 .zodiacs_card_flip p {
     text-align: left;
     margin-top: 5px;
-    font-size: 15px;
+    font-size: 12px;
 }
 
  

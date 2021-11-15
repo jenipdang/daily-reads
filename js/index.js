@@ -15,6 +15,25 @@ const handleErrorDisplay = (error) => {
 	}, 5000)
 }
 
+function getQuotes() {
+    fetch("https://quotes15.p.rapidapi.com/quotes/random/", {
+	    "method": "GET",
+	    "headers": {
+	    	"x-rapidapi-host": "quotes15.p.rapidapi.com",
+		    "x-rapidapi-key": MY_API_KEY
+	    }
+    })
+    .then (response => response.json())
+    .then(response => {
+	    // console.log(response);
+	    document.getElementById('description').innerHTML = '"' + response.content + '"'
+	    document.getElementById('color').innerHTML = ' - ' + response.originator.name + ' - '
+    })
+    .catch(handleErrorDisplay)
+}
+
+document.addEventListener("DOMContentLoaded", getQuotes)
+
 function searchQuery(event) {
 	if(event.keyCode === 13) {
 		getResults(searchBox().value)
@@ -22,22 +41,34 @@ function searchQuery(event) {
 	}
 }
 
-const getResults = (sign) => {
-	fetch(`https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=${sign}&day=today`, {
+async function getResults(sign) {
+	const response = await fetch(`https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=${sign}&day=today`, {
 		"method": "POST",
 		"headers": {
 			"x-rapidapi-host": "sameer-kumar-aztro-v1.p.rapidapi.com",
 			"x-rapidapi-key": MY_API_KEY
 		}
 	})
-	.then(response => response.json())
-	.then(horoscope => displayResults(horoscope))
-	.then(horoscope => {
-		console.log(horoscope)
-	})
-
-	.catch(handleErrorDisplay)
+	const horoscope = await response.json()
+	return displayResults(horoscope)
 }
+
+// const getResults = (sign) => {
+// 	fetch(`https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=${sign}&day=today`, {
+// 		"method": "POST",
+// 		"headers": {
+// 			"x-rapidapi-host": "sameer-kumar-aztro-v1.p.rapidapi.com",
+// 			"x-rapidapi-key": MY_API_KEY
+// 		}
+// 	})
+// 	.then(response => response.json())
+// 	.then(horoscope => displayResults(horoscope))
+// 	.then(horoscope => {
+// 		console.log(horoscope)
+// 	})
+
+// 	.catch(handleErrorDisplay)
+// }
 
 const displayResults = (horoscope) => {
 	document.getElementById('description').innerText = '\"' + horoscope.description + '\"'
@@ -69,26 +100,6 @@ const hideMobileMenu = () => {
 
 mobileLinks.addEventListener('click', hideMobileMenu);
 
-async function getQuotes() {
-    await fetch("https://quotes15.p.rapidapi.com/quotes/random/", {
-	    "method": "GET",
-	    "headers": {
-	    	"x-rapidapi-host": "quotes15.p.rapidapi.com",
-		    "x-rapidapi-key": MY_API_KEY
-	    }
-    })
-    .then (response => response.json())
-    .then(response => {
-	    console.log(response);
-
-	    document.getElementById('description').innerHTML = '"' + response.content + '"'
-	    document.getElementById('color').innerHTML = ' - ' + response.originator.name + ' - '
-    })
-    .catch(handleErrorDisplay)
-}
-
-document.addEventListener("DOMContentLoaded", getQuotes)
-
 const cards = document.querySelectorAll('.zodiacs_card_flip')
 
 function flipCard(){
@@ -99,13 +110,3 @@ cards.forEach((card) => {
 	card.addEventListener('mouseover', flipCard)
 	card.addEventListener('mouseout', flipCard)
 })
-
-
-
-// cards.forEach(card.addEventListener('mouseover', () => {
-// 	card.classList.toggle('is-flipped')
-// }))
-
-// cards.forEach(card.addEventListener('mouseout', () => {
-// 	card.classList.toggle('is-flipped')
-// }))
