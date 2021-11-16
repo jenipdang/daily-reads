@@ -15,20 +15,25 @@ const handleErrorDisplay = (error) => {
 	}, 5000)
 }
 
-function getQuotes() {
-    fetch("https://quotes15.p.rapidapi.com/quotes/random/", {
-	    "method": "GET",
-	    "headers": {
-	    	"x-rapidapi-host": "quotes15.p.rapidapi.com",
-		    "x-rapidapi-key": MY_API_KEY
-	    }
-    })
-    .then (response => response.json())
-    .then(response => {
-	    document.getElementById('description').innerHTML = '"' + response.content + '"'
-	    document.getElementById('color').innerHTML = ' - ' + response.originator.name + ' - '
-    })
-    .catch(handleErrorDisplay)
+async function getQuotes() {
+	try {
+		const response = await fetch("https://quotes15.p.rapidapi.com/quotes/random/", {
+			"method": "GET",
+			"headers": {
+				"x-rapidapi-host": "quotes15.p.rapidapi.com",
+				"x-rapidapi-key": MY_API_KEY
+			}
+		})
+		const quote = await response.json()
+		return displayQuotes(quote)
+	} catch(handleErrorDisplay) {
+		alert(handleErrorDisplay)
+	}
+}
+
+const displayQuotes = (response) => {
+	document.getElementById('description').innerHTML = '"' + response.content + '"'
+	document.getElementById('color').innerHTML = ' - ' + response.originator.name + ' - '
 }
 
 document.addEventListener("DOMContentLoaded", getQuotes)
