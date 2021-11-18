@@ -29,8 +29,8 @@ async function getQuotes() {
 }
 
 const displayQuotes = (response) => {
-	document.getElementById('description').innerHTML = '"' + response.content + '"'
-	document.getElementById('color').innerHTML = ' - ' + response.originator.name + ' - '
+	document.getElementById('description').innerText = '"' + response.content + '"'
+	document.getElementById('color').innerText = ' - ' + response.originator.name + ' - '
 }
 
 document.addEventListener("DOMContentLoaded", getQuotes)
