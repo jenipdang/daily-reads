@@ -23,8 +23,8 @@ async function getQuotes() {
 		})
 		const quote = await response.json()
 		return displayQuotes(quote)
-	} catch(handleErrorDisplay) {
-		alert(handleErrorDisplay)
+	} catch(error) {
+		handleErrorDisplay(error)
 	}
 }
 
@@ -45,15 +45,19 @@ function searchQuery(event) {
 }
 
 async function getResults(sign) {
-	const response = await fetch(`https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=${sign}&day=today`, {
-		"method": "POST",
-		"headers": {
-			"x-rapidapi-host": "sameer-kumar-aztro-v1.p.rapidapi.com",
-			"x-rapidapi-key": MY_API_KEY
-		}
-	})
+	try { 
+		const response = await fetch(`https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=${sign}&day=today`, {
+			"method": "POST",
+			"headers": {
+				"x-rapidapi-host": "sameer-kumar-aztro-v1.p.rapidapi.com",
+				"x-rapidapi-key": MY_API_KEY
+			}
+		})
 	const horoscope = await response.json()
 	return displayResults(horoscope)
+	} catch(error) {
+		handleErrorDisplay(error)
+	}
 }
 
 const displayResults = (horoscope) => {
