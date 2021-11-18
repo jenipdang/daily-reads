@@ -1,8 +1,5 @@
 import {MY_API_KEY} from './config.js'
 
-const searchBox = () => document.querySelector('.search-box')
-searchBox().addEventListener('keypress', searchQuery)
-
 const messageBanner = () => document.querySelector("#message-banner")
 
 const handleErrorDisplay = (error) => {
@@ -37,6 +34,9 @@ const displayQuotes = (response) => {
 }
 
 document.addEventListener("DOMContentLoaded", getQuotes)
+
+const searchBox = () => document.querySelector('.search-box')
+searchBox().addEventListener('keypress', searchQuery)
 
 function searchQuery(event) {
 	if(event.keyCode === 13) {
