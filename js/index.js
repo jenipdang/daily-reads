@@ -42,8 +42,12 @@ async function getResults(sign) {
 				"x-rapidapi-key": MY_API_KEY
 			}
 		})
-	const horoscope = await response.json()
-	return displayResults(horoscope)
+		if (!response.ok){
+			throw Error(`${sign} is an invalid Zodiac Sign. Please enter a valid sign. Click on Zodiac Signs in the Navigation Tool Bar on top for more Zodiac signs information.`)
+		}
+		const horoscope = await response.json()
+		return displayResults(horoscope)
+
 	} catch(error) {
 		alert(error)
 	}
@@ -56,6 +60,7 @@ const displayResults = (horoscope) => {
 	document.getElementById('compatibility').innerText = 'Compatibility: ' + horoscope.compatibility
 	document.getElementById('lucky-number').innerText = 'Lucky Number: ' + horoscope.lucky_number
 }
+
 
 document.addEventListener("DOMContentLoaded", searchQuery)
 
