@@ -1,16 +1,5 @@
 import {MY_API_KEY} from './config.js'
 
-const messageBanner = () => document.querySelector("#message-banner")
-
-const handleErrorDisplay = (error) => {
-	messageBanner().classList.add("alert")
-	messageBanner().textContent = error
-	messageBanner().classList.remove("hide")
-	setTimeout(() => {
-		messageBanner().classList.remove("alert")
-		messageBanner().classList.add("hide")
-	}, 5000)
-}
 
 async function getQuotes() {
 	try {
@@ -24,7 +13,7 @@ async function getQuotes() {
 		const quote = await response.json()
 		return displayQuotes(quote)
 	} catch(error) {
-		handleErrorDisplay(error)
+		alert(error)
 	}
 }
 
@@ -56,7 +45,7 @@ async function getResults(sign) {
 	const horoscope = await response.json()
 	return displayResults(horoscope)
 	} catch(error) {
-		handleErrorDisplay(error)
+		alert(error)
 	}
 }
 
